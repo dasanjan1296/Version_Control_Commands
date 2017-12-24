@@ -1,0 +1,17 @@
+//Syncing local repositories with server repositories.
+//Use of REMOTE
+Command - git remote
+This will show all the remotes available of the current repository
+
+//Now to add remotes for the current repositories, get the url of the newly created repository in github
+Command - Command - git remote add origin url
+This will create a remote by the name origin which is a referral for the current repository
+
+//To verify if the url was added correctly
+Command - git remote -v
+THis v stands for verbose, i.e., to display more information on remotes available.
+
+//In order to send the changes to the remote,
+Command - git push name1 name2
+name1 - the remote you want to send the changes to
+name2 - the name of the local branch you would like to push. 
