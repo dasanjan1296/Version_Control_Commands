@@ -15,3 +15,17 @@ THis v stands for verbose, i.e., to display more information on remotes availabl
 Command - git push name1 name2
 name1 - the remote you want to send the changes to
 name2 - the name of the local branch you would like to push. 
+
+//Set an email address in Git. You can use your GitHub-provided no-reply email address or any email address.
+Command - git config --global user.email "email@example.com"
+
+//Confirm that you have set the email address correctly in Git:
+Command - git config --global user.email
+//Output - email@example.com
+
+//Set user name in Git.
+Command - git config --global user.name "üsername"
+
+//Confirm that you have set the username correctly in Git:
+Command - git config --global user.name
+//Output - username
