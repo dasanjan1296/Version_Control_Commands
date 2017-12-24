@@ -1,0 +1,84 @@
+//To see the hidden files in a directory 
+Command - ls -a
+
+//To create a repository, 1. create in an empty directory 2. create in a non-empty directory
+//To initialize or create a new git repository
+Command - git init
+Now there are zero commits in this new repository
+If you run the command git log then you will get an error message
+
+//To check if the current directory is really a git repository
+Command - git status
+
+//Now once you have an empty repository, new files can be added to it by git add followed by git commit
+//So, Working Directory->Staging Area->Repository
+//To add a file to the staging area
+Command - git add file.ext
+Post this, if you run git status, all the changes that need to be committed will be shown
+
+//To add a commit
+Command - git commit
+This will take all the changes from the staging area to the commit.
+
+//So for committing, we need three commands, git add, git status, git commit
+
+//Now, if we have made some changes to a file in working directory and want to compare it with the file's version in the staging area.
+Command - git diff(with no args)
+
+//Now to compare file's version in staging area and the repository's latest commit.
+Command - git diff --staged
+
+//To discard any changes in the working area or the staging area
+Command - git reset --hard
+This is irreversible. Use with caution. Use git diff and git diff --staged prior to using this.
+
+//Creating Branches means to create a non-linear branching history  
+//Creating, checking out and committing with branches
+Command - git branch
+Lists all the branches of the current repository
+
+Command - git branch branch_name
+Creates a branch of the current repository with master branch by default checked out. And if any change is made it will be reflected in the checked out branch.
+
+//So when you create a branch you want your changes to get reflected in the new branch and not the master branch, right?
+Command - git checkout branch_name
+This will make the new branch check out and changes will be visible in this new branch now.
+
+//To view a graph of the branches
+Command - git log --graph --oneline branch_name1 branch_name2...
+
+//To run git branch b1 and then to check it out run git checkout b1
+Command - git checkout -b branch_name
+This serves the purpose of both commands
+
+//Merging slave branch to master branch
+Command - git merge master slave
+
+//To see what changes were made to a commit as compared to its parent
+Command - git show commit_id
+
+//Deleting a branch. This only deletes a branch label and not the commits
+Command - git branch -d branch_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
