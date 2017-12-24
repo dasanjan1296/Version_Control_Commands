@@ -1,0 +1,96 @@
+//Automatically compare files
+Windows - FC command ( fc file1.ext file2.ext)
+Mac and Linux - diff command ( diff -u file1.ext file2.ext)
+
+//Version Control Systems
+1. GIT 
+2. CVS(Concurrent Version Systems)
+3. SVN(Syversion, similar to CVS)
+4. Mercurial(similar to GIT)
+5. Manual Saving
+7. Dropbox
+8. Google Docs
+9. Wikipedia
+ 
+//User created checkpoints - COMMITS
+Commits are the basic building blocks of git. Each representing a version of the content at a different point in time.
+Requires user to supply a Commit message each time a commit is created.
+1. fix off-by-one bug
+2. add cool new feature
+3. improve user docs
+
+//To see a history of commits(newest to oldest) with Commit ID Author, Date, Commit Messages
+Command - git log
+press q to quit out of git log
+
+//To get the differences between two commits
+Command - git diff commit_id_1 commit_id_2
+press q to quit git diff
+
+
+//Git Concepts
+Commit - (part of Git)
+diff - (operates on Commit)
+
+//Concept of Repository
+A repository is a collection of files which are interrelated and changes in one of them can affect others too.
+So we can call it git's way to address to the concept of commit when we have multiple inter-related files in our database.
+So now, we say that a commit is a snip of the file set(all the inter-related files in the database) at a particular point of time.
+And all such commits make up a repository.
+
+//git log variation for the case of a repository
+Command - git log --stat
+This command will show what differences are present between two commits and in which particular files.
+
+//How to clone a repository or how to download a file system with all the history associated, i.e. all the versions
+Command - git clone https://github.com/username/repo.git
+This will get you a folder containing the required repository with its versions. You can now use git log and git diff commands on it.
+
+//To get the colored output for insertions and deletions
+Command - git config --global color.ui auto
+This will make the insertions appear in green and deletions appear in red. --global means it applies to all of your projects.
+
+
+//To checkout the commit
+Command - git checkout commit_id
+
+
+
+
+//Customize cmd for git usage
+Go to https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+Go to https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+.bashrc / .bash_profile
+
+# Enable tab completion
+source ~/git-completion.bash
+
+# colors!
+green="\[\033[0;32m\]"
+blue="\[\033[0;34m\]"
+purple="\[\033[0;35m\]"
+reset="\[\033[0m\]"
+
+# Change command prompt
+source ~/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+# '\u' adds the name of the current user to the prompt
+# '\$(__git_ps1)' adds git-related stuff
+# '\W' adds the name of the current directory
+export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
+
+Make sure you can start your editor from the terminal If you use Sublime, you can do this by add the following line to your .bash_profile (you may need to change the path if Sublime is installed in a different location for you):
+
+alias subl="/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
+alias gc="git commit -m"
+alias ga="git add ."
+alias gl="git log"
+alias gs="git status"
+
+Making Git configurations Run the following Git configuration commands. The first one will need to be modified if you are using a text editor other than Sublime, or if Sublime is installed in another location for you. See this page for the correct command for a couple of other popular text editors. For any other editor, you'll need to enter the command you use to launch that editor from the terminal.
+
+git config --global core.editor "'C:\Program Files\Sublime Text 3\sublime_text.exe' -n -w"
+git config --global push.default upstream
+git config --global merge.conflictstyle diff3
+
+
