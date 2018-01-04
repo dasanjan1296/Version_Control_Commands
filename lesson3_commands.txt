@@ -29,3 +29,36 @@ Command - git config --global user.name "üsername"
 //Confirm that you have set the username correctly in Git:
 Command - git config --global user.name
 //Output - username
+
+//If the commit only exists in your local repository and has not been pushed to GitHub, you can amend the commit message with the git commit --amend command.
+
+//On the command line, navigate to the repository that contains the commit you want to amend.
+Command - git commit --amend and press Enter.
+//In your text editor, edit the commit message and save the commit.
+//The new commit and message will appear on GitHub the next time you push.
+
+//To remove a file named filename.txt from the current index, the "about to be committed" area, without changing anything else.
+Command - git reset filename.txt
+//To undo git add . use git reset (no dot).
+
+//If there are files on Github repository and aren't present in the local version of the repository, you need to pull changes from the github repository to local repository
+Command - git pull name1 name2
+//name1 - name of the remote at local repository, where you want to pull the changes to.
+//name2 - name of the branch of the local repository where you want to pull the changes from
+
+//To clone a github repository to local directory
+Command - git clone url
+//url - This is the link to the github repository, you intend to clone.
+//Cloning also creates a remote for you in the local repository, by default.
+
+//git pull origin master := git fetch origin + git merge master origin/master
+//When you want some changes in the github repository reflect in your local repository
+Command - git fetch origin 
+
+//After running git merge command, if you get conflict message from git, just navigate to the conflicts in the corresponding file and fix it.
+//Now you may use git add command to add the conflicting file to the staging area and also let git know that the conflict has been resolved.
+
+//To create pull request on a github repository, you may first create a branch in your local repository and then checkout with that branch. After that you may make some commits, add them to the staging area, commit them and finally push the newly created branch to the github repository.
+//If you forked a repository form github, and then cloned it to your local repository, and then made some changes locally. Now, say, the original repository got changed over that time, and you want to incorporate those changes to your fork copy first first and then commit the changes you made locally in your local repository.
+//In the above case, you need to first pull the changes form the original repository to your local copy(by creating another REMOTE called upstream, generally and then checking out with the master branch), update the master branch to the upstream branch and then merge the local new branch and the updated master branch.
+//After merging, you may pull the changes back to your fork copy of the original repository.
